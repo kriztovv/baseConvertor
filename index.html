@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ciselne soustavy</h1>
+    <p>vloz cislo</p>
+    <input type="text" id="numberInput" placeholder="Zadejte číslo" />
+    <select id="baseSelect">
+      <option value="2">Binární</option>
+      <option value="8">Osmová</option>
+      <option value="16">Hexadecimální</option>
+    </select>
+    <button onclick="convertNumber()">Převést</button>
+    <p id="result"></p>
+    <script>
+      function convertNumber() {
+        let numberInput = document.getElementById("numberInput").value;
+        const baseSelect = document.getElementById("baseSelect").value;
+        console.log(numberInput, baseSelect);
+        let result;
+        const numbers = [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+        ];
+        result = numbers[numberInput % baseSelect];
+        numberInput = Math.floor(numberInput / baseSelect);
+        console.log(result);
+        while (numberInput > 0) {
+          result = result + numbers[numberInput % baseSelect];
+        }
+        function reverse(s) {
+          return s.split("").reverse().join("");
+        }
+        console.log(result);
+        document.getElementById("result").innerText = reverse(result);
+      }
+    </script>
+  </body>
+</html>
