@@ -40,12 +40,13 @@
           "E",
           "F",
         ];
-        result = numbers[numberInput % baseSelect];
-        numberInput = Math.floor(numberInput / baseSelect);
-        console.log(result);
+        // result = numbers[numberInput % baseSelect];
+        // numberInput = Math.floor(numberInput / baseSelect);
+        // console.log(result);
         while (numberInput > 0) {
           result = result + numbers[numberInput % baseSelect];
         }
+
         function reverse(s) {
           return s.split("").reverse().join("");
         }
