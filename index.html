@@ -8,6 +8,7 @@
   <body>
     <h1>ciselne soustavy</h1>
     <p>vloz cislo</p>
+    <button onclick="randomNumber()">nahodne</button>
     <input type="text" id="numberInput" placeholder="Zadejte číslo" />
     <select id="baseSelect">
       <option value="2">Binární</option>
@@ -17,6 +18,11 @@
     <button onclick="convertNumber()">Převést</button>
     <p id="result"></p>
     <script>
+
+        function randomNumber() {
+            const randomNum = Math.floor(Math.random() * 1000);
+            document.getElementById("numberInput").value = randomNum;
+        }
       function convertNumber() {
         let numberInput = document.getElementById("numberInput").value;
         const baseSelect = document.getElementById("baseSelect").value;
